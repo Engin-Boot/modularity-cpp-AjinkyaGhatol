@@ -25,6 +25,6 @@ int main() {
     testPairToNumber(BLACK, ORANGE, 12);
     testPairToNumber(VIOLET, SLATE, 25);
     string manual = ToString();
-    cout << manual;
+    //cout << manual;
     return 0;
 }
