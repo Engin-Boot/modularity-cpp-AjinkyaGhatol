@@ -1,4 +1,15 @@
-#include "colorCode.h"
+#include "colorCodeData.h"
+ColorPair GetColorFromPairNumber(int pairNumber) {
+    int zeroBasedPairNumber = pairNumber - 1;
+    MajorColor majorColor =
+        (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
+    MinorColor minorColor =
+        (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
+    return ColorPair(majorColor, minorColor);
+}
+int GetPairNumberFromColor(MajorColor major, MinorColor minor) {
+    return major * numberOfMinorColors + minor + 1;
+}
 void testNumberToPair(int pairNumber,
     MajorColor expectedMajor,
     MinorColor expectedMinor)
@@ -9,7 +20,6 @@ void testNumberToPair(int pairNumber,
     assert(colorPair.getMajor() == expectedMajor);
     assert(colorPair.getMinor() == expectedMinor);
 }
-
 void testPairToNumber(
     MajorColor major,
     MinorColor minor,
