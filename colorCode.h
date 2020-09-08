@@ -10,7 +10,7 @@ string manualToString()
     {
         for (int j = 1; j <= numberOfMinorColors; j++)
         {
-            manual = manual + "|" + to_string(pairNumber) + "\t\t|" + MajorColorNames[i - 1] + "\t\t|" + MinorColorNames[j - 1] + "\t\t|\n";
+            manual += "|" + to_string(pairNumber) + "\t\t|" + MajorColorNames[i - 1] + "\t\t|" + MinorColorNames[j - 1] + "\t\t|\n";
             pairNumber++;
         }
         manual = manual + "-------------------------------------------------\n";
